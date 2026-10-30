@@ -2,28 +2,28 @@
 class Canvas < Formula
   desc "Local diagram service for coding agents, with a canvas editor and MCP server"
   homepage "https://github.com/hyperlab-sh/canvas"
-  version "0.3.0"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/hyperlab-sh/canvas/releases/download/v0.3.0/canvas-0.3.0-darwin-arm64.tar.gz"
-      sha256 "28bbaf8212aae021ff601d49de5df052f1b0a729e6b5906ca08e5edd8d8c44b9"
+      url "https://github.com/hyperlab-sh/canvas/releases/download/v0.4.0/canvas-0.4.0-darwin-arm64.tar.gz"
+      sha256 "6cf353d249fe96b5e00d3e855443e09d69d15e9f6259d0853b0cba8d5fd903fb"
     end
     on_intel do
-      url "https://github.com/hyperlab-sh/canvas/releases/download/v0.3.0/canvas-0.3.0-darwin-x64.tar.gz"
-      sha256 "68b49403a7b1ca31e81dda62a2bfda9270b87f8acc8f55b19df41ace226a9daf"
+      url "https://github.com/hyperlab-sh/canvas/releases/download/v0.4.0/canvas-0.4.0-darwin-x64.tar.gz"
+      sha256 "a9484c611ad245f8665356f319516fa938afa56156fd307341b050a0bd94de3b"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/hyperlab-sh/canvas/releases/download/v0.3.0/canvas-0.3.0-linux-arm64.tar.gz"
-      sha256 "8c5446bbdaf09a868973dc12ccf510c36837871b50aa4794c87f2883c8d6346d"
+      url "https://github.com/hyperlab-sh/canvas/releases/download/v0.4.0/canvas-0.4.0-linux-arm64.tar.gz"
+      sha256 "052ee967ed11a26721e74130380204d7e3ba0b50b5f4ec21e4ce2293c9070bb5"
     end
     on_intel do
-      url "https://github.com/hyperlab-sh/canvas/releases/download/v0.3.0/canvas-0.3.0-linux-x64.tar.gz"
-      sha256 "6734bd5841f3e38fa145878c19985591b1fea001b48116eead5d2e44e9d714b5"
+      url "https://github.com/hyperlab-sh/canvas/releases/download/v0.4.0/canvas-0.4.0-linux-x64.tar.gz"
+      sha256 "9782191b5fb55908b8add6cf8553175642e63996dca90d8b2eef184a9c8fe4c1"
     end
   end
 
