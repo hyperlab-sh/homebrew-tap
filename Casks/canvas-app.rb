@@ -2,11 +2,11 @@
 cask "canvas-app" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.4.0"
-  sha256 arm:   "6201039ecfded833da8c190da6f9e4b2da5a630d9df2b14ecfd9ec1ef1c7b911",
-         intel: "852b90b0a4ff2adc1eed85e0b00d5e959d508e8e45178c64e52b3effd1244011"
+  version "0.4.1"
+  sha256 arm:   "ed9148e34207c0fe591dd0a510f2fee57a79086b992a4745aa5289d4f84fc323",
+         intel: "8dedcf156caf0cadb81d314549aa9bea20ac47e1cdf0ed5169e921e1bcdc37f0"
 
-  url "https://github.com/hyperlab-sh/canvas/releases/download/v0.4.0/canvas-app-#{version}-darwin-#{arch}.dmg"
+  url "https://github.com/hyperlab-sh/canvas/releases/download/v0.4.1/canvas-app-#{version}-darwin-#{arch}.dmg"
   name "Canvas"
   desc "Native window for the Canvas diagram editor"
   homepage "https://github.com/hyperlab-sh/canvas"
@@ -19,9 +19,8 @@ cask "canvas-app" do
   app "Canvas.app"
 
   # The app is not signed or notarized (no Apple Developer account), so Gatekeeper would refuse the quarantined copy.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Canvas.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Canvas.app"]
   end
 
   zap trash: [

@@ -2,28 +2,28 @@
 class Canvas < Formula
   desc "Local diagram service for coding agents, with a canvas editor and MCP server"
   homepage "https://github.com/hyperlab-sh/canvas"
-  version "0.4.0"
+  version "0.4.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/hyperlab-sh/canvas/releases/download/v0.4.0/canvas-0.4.0-darwin-arm64.tar.gz"
-      sha256 "6cf353d249fe96b5e00d3e855443e09d69d15e9f6259d0853b0cba8d5fd903fb"
+      url "https://github.com/hyperlab-sh/canvas/releases/download/v0.4.1/canvas-0.4.1-darwin-arm64.tar.gz"
+      sha256 "8575b8e4778fe66242ba76ecce48a647484203692121b04575224749200ab870"
     end
     on_intel do
-      url "https://github.com/hyperlab-sh/canvas/releases/download/v0.4.0/canvas-0.4.0-darwin-x64.tar.gz"
-      sha256 "a9484c611ad245f8665356f319516fa938afa56156fd307341b050a0bd94de3b"
+      url "https://github.com/hyperlab-sh/canvas/releases/download/v0.4.1/canvas-0.4.1-darwin-x64.tar.gz"
+      sha256 "26595ddc9012919d0c947b372e66fdd095467e1a5f6f259afb774e68f2d2bd34"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/hyperlab-sh/canvas/releases/download/v0.4.0/canvas-0.4.0-linux-arm64.tar.gz"
-      sha256 "052ee967ed11a26721e74130380204d7e3ba0b50b5f4ec21e4ce2293c9070bb5"
+      url "https://github.com/hyperlab-sh/canvas/releases/download/v0.4.1/canvas-0.4.1-linux-arm64.tar.gz"
+      sha256 "ee9ed7ae2b3045806558c0d1c42f5dcf01ca99814fd757b9d98029d8e86464ae"
     end
     on_intel do
-      url "https://github.com/hyperlab-sh/canvas/releases/download/v0.4.0/canvas-0.4.0-linux-x64.tar.gz"
-      sha256 "9782191b5fb55908b8add6cf8553175642e63996dca90d8b2eef184a9c8fe4c1"
+      url "https://github.com/hyperlab-sh/canvas/releases/download/v0.4.1/canvas-0.4.1-linux-x64.tar.gz"
+      sha256 "c66c0f826a7c793837bbbe7313e7eedf8aa64072a7bd13be7a9d9db8c6830590"
     end
   end
 
@@ -35,7 +35,9 @@ class Canvas < Formula
   end
 
   def caveats
-    <<~EOS
+    # The cask is macOS-only, so Linux users are not pointed at it.
+    app = OS.mac? ? "The desktop app is a separate cask:\n  brew install --cask hyperlab-sh/tap/canvas-app\n" : ""
+    app + <<~EOS
       Keep it running in the background (and at every login):
         canvas service install
       The service points at #{opt_libexec}/bin/canvas, so `brew upgrade canvas` keeps it working.
